@@ -1,0 +1,41 @@
+# Quando si carica una foto dal pannello, la ottimizza per il web
+# e la rimette al suo posto con lo stesso nome.
+name: Ottimizza foto
+
+on:
+  push:
+    branches: [main]
+    paths: ['immagini/**']
+
+permissions:
+  contents: write
+  pages: write
+
+jobs:
+  foto:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install --quiet pillow
+      - name: Ottimizza le foto nuove
+        run: |
+          git diff --name-only --diff-filter=AM "${{ github.event.before }}" "${{ github.sha }}" -- immagini/ > nuove.txt || git ls-files immagini/ > nuove.txt
+          cat nuove.txt
+          xargs -a nuove.txt -d '\n' -r python .github/scripts/ottimizza.py
+          rm nuove.txt
+      - name: Salva e ripubblica
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if git diff --quiet; then exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
+          git commit -qam "Foto ottimizzate per il web"
+          git pull --rebase -q origin main
+          git push -q origin main
+          gh api -X POST "repos/${{ github.repository }}/pages/builds" || true
