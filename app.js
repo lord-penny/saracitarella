@@ -193,6 +193,8 @@
   $('prec').addEventListener('click', () => sposta(-1));
   $('succ').addEventListener('click', () => sposta(1));
   $('chiudi').addEventListener('click', () => scheda.close());
+  $('torna').addEventListener('click', () => scheda.close());
+  $('scheda-home').addEventListener('click', () => scheda.close());
   scheda.addEventListener('keydown', e => {
     if (e.key === 'ArrowLeft') sposta(-1);
     if (e.key === 'ArrowRight') sposta(1);

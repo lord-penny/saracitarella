@@ -234,11 +234,25 @@ dialog::backdrop { background: var(--nero); }
   background: var(--nero); color: var(--carta); font: 600 0.85rem/1 var(--testo); letter-spacing: 0.1em; text-transform: uppercase;
 }
 .cta:hover { background: var(--giallo); color: var(--nero); }
+.sheet-barra { position: sticky; }
+.torna {
+  font: 600 0.78rem/1 var(--testo); letter-spacing: 0.12em; text-transform: uppercase; cursor: pointer;
+  padding: 0.75rem 1rem; background: var(--giallo); color: var(--nero); border: 0; white-space: nowrap;
+}
+.torna:hover { background: var(--carta); }
+@media (max-width: 480px) { .torna .lungo { display: none; } }
 .sheet-nav {
   display: flex; gap: 0; justify-content: flex-end;
   padding: 1.25rem max(20px, env(safe-area-inset-right, 0px)) max(20px, env(safe-area-inset-bottom, 0px)) max(20px, env(safe-area-inset-left, 0px));
 }
-@media (min-width: 900px) { .sheet-nav { padding: 1.5rem 3rem 2rem; } }
+@media (min-width: 900px) { .sheet-barra { position: sticky; }
+.torna {
+  font: 600 0.78rem/1 var(--testo); letter-spacing: 0.12em; text-transform: uppercase; cursor: pointer;
+  padding: 0.75rem 1rem; background: var(--giallo); color: var(--nero); border: 0; white-space: nowrap;
+}
+.torna:hover { background: var(--carta); }
+@media (max-width: 480px) { .torna .lungo { display: none; } }
+.sheet-nav { padding: 1.5rem 3rem 2rem; } }
 .sheet-nav button {
   font: 600 0.82rem/1 var(--testo); letter-spacing: 0.08em; text-transform: uppercase; padding: 0.8rem 1.1rem; cursor: pointer;
   background: transparent; color: var(--nero); border: 2px solid var(--nero);
