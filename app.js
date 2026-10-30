@@ -5,6 +5,10 @@
   const griglia = $('griglia'), filtri = $('filtri'), scheda = $('scheda');
   $('anno').textContent = new Date().getFullYear();
   logo();
+  // La barra in alto compare quando l'apertura non si vede più
+  const barra = $('barra');
+  new IntersectionObserver(([e]) => barra.classList.toggle('visibile', !e.isIntersecting), { threshold: 0.15 })
+    .observe(document.querySelector('.hero'));
 
   let dati;
   try {
@@ -231,7 +235,7 @@
     return `url(${c.toDataURL('image/jpeg', 0.88)})`;
   }
   function logo() {
-    const hero = document.querySelector('.hero');
+    const hero = document.documentElement;
     // campiture di colori primari, come le sue tele giallo / rosso / blu
     hero.style.setProperty('--tela-colori', tela(400, 400, [
       ['#ffd60a', 0.0, 0.0, 0.48, 0.5], ['#ff1f3d', 0.0, 0.53, 0.48, 1.0],

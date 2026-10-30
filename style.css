@@ -63,12 +63,13 @@ a { color: inherit; }
 @media (min-width: 900px) { .name { font-size: calc(clamp(5rem, 10.6vw, 15rem) * var(--logo-k, 1)); } }
 .name span:last-child { color: var(--rosso); }
 .name span { width: fit-content; }
+.name a { text-decoration: none; color: inherit; display: grid; }
 .name b { font-weight: inherit; }
 
 /* Logo: Bricolage Grotesque stretto; le iniziali S e C sono "dipinte"
    con campiture e raschiature generate in app.js */
 .name { --logo-f: "Bricolage Grotesque", "Arial Narrow", sans-serif; --logo-w: 800; --logo-lh: 0.88; --logo-ls: -0.04em; --logo-k: 1.3; font-stretch: 75%; }
-.hero[data-logo="lettere"] .dip {
+.dip {
   background: var(--tela-colori, var(--giallo)) center / cover;
   -webkit-background-clip: text; background-clip: text; color: transparent;
 }
@@ -98,6 +99,32 @@ a.b:hover .b-a { transform: translate(4px, 4px); }
 .b-t { font: 900 clamp(2.6rem, 6vw, 6.2rem)/0.85 var(--display); text-transform: uppercase; }
 .b-small { font-size: clamp(1.6rem, 3vw, 2.6rem); }
 .b-a { position: absolute; right: 1rem; bottom: 0.8rem; font: 700 clamp(2rem, 4vw, 3.4rem)/1 var(--display); transition: transform 0.25s ease; }
+
+/* Barra in alto: compare quando l'apertura esce dallo schermo */
+body::before {
+  content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px);
+  z-index: 11; background: var(--nero);
+}
+.barra {
+  position: fixed; z-index: 10; top: 0; left: 0; right: 0;
+  display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+  padding: calc(0.7rem + env(safe-area-inset-top, 0px)) max(16px, env(safe-area-inset-right, 0px)) 0.7rem max(16px, env(safe-area-inset-left, 0px));
+  background: var(--nero); color: var(--carta);
+  transform: translateY(-110%); transition: transform 0.3s ease;
+}
+.barra.visibile { transform: none; }
+.barra:focus-within { transform: none; }
+@media (min-width: 720px) { .barra { padding-left: max(40px, env(safe-area-inset-left, 0px)); padding-right: max(40px, env(safe-area-inset-right, 0px)); } }
+.barra-logo {
+  font: 800 1.7rem/1 "Bricolage Grotesque", "Arial Narrow", sans-serif; font-stretch: 75%;
+  text-transform: uppercase; letter-spacing: -0.03em; text-decoration: none; white-space: nowrap;
+}
+.barra-logo span:last-child { color: var(--rosso); }
+.barra-link { display: flex; gap: clamp(0.9rem, 3vw, 2rem); }
+.barra-link a { font: 600 0.78rem/1 var(--testo); letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; }
+.barra a:hover { color: var(--giallo); }
+.barra-logo:hover span { color: inherit; }
+section[id] { scroll-margin-top: 4rem; }
 
 /* Opere */
 .works { padding-top: clamp(4rem, 9vw, 7rem); }
