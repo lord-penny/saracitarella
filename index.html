@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sara Citarella</title>
+<meta name="description" content="Sara Citarella, pittrice. Pittura astratta e materica: acrilico, pomice, gesso, chiodi e rame su tela e legno.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;900&family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,800&family=Schibsted+Grotesk:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="hero" data-logo="lettere">
+  <div class="name-panel">
+    <p class="kicker">Contemporary art · Napoli</p>
+    <h1 class="name"><span><b class="dip">S</b>ara</span><span><b class="dip">C</b>itarella</span></h1>
+  </div>
+  <nav class="blocks" aria-label="Sezioni">
+    <a class="b b-giallo" href="#opere"><span class="b-k">01</span><span class="b-t">Opere</span><span class="b-a" aria-hidden="true">↓</span></a>
+    <a class="b b-rosso" href="#biografia"><span class="b-k">02</span><span class="b-t">Bio</span></a>
+    <a class="b b-blu" href="#contatti"><span class="b-k">03</span><span class="b-t">Contatti</span></a>
+    <div class="b b-carta"><p>Pittura astratta e materica. Acrilico, pomice, gesso, chiodi e rame su tela e legno.</p></div>
+    <a class="b b-nero" href="https://www.instagram.com/saracitarella.art" target="_blank" rel="noopener"><span class="b-t b-small">Instagram</span><span class="b-a" aria-hidden="true">↗</span></a>
+  </nav>
+</header>
+
+<main>
+  <section id="opere" class="works" aria-labelledby="opere-titolo">
+    <div class="works-head wrap">
+      <h2 id="opere-titolo">Opere</h2>
+      <div class="tabs" id="filtri" role="group" aria-label="Filtra le opere"></div>
+    </div>
+    <div class="grid" id="griglia">
+      <p class="msg wrap">Caricamento delle opere…</p>
+    </div>
+  </section>
+
+  <section class="quote" aria-label="Dichiarazione">
+    <p class="wrap">La pittura come espressione e viaggio verso la salvezza dell'anima.</p>
+  </section>
+
+  <section id="biografia" class="bio wrap" aria-labelledby="bio-titolo">
+    <h2 id="bio-titolo">Biografia</h2>
+    <figure class="portrait" id="ritratto"><span class="monogram" aria-hidden="true">SC</span></figure>
+    <div class="bio-text" id="bio-testo"></div>
+  </section>
+
+  <section id="contatti" class="contact" aria-labelledby="contatti-titolo">
+    <div class="wrap">
+      <h2 id="contatti-titolo">Contatti</h2>
+      <p class="contact-lead">Per opere, acquisti e commissioni scrivi a Sara.</p>
+      <ul class="links">
+        <li id="contatto-email" hidden><a href="#"><span class="k">Email</span><span class="v"></span></a></li>
+        <li><a href="https://www.instagram.com/saracitarella.art" target="_blank" rel="noopener"><span class="k">Instagram</span><span class="v">@saracitarella.art</span></a></li>
+        <li><a href="https://www.gigarte.com/saracitarella" target="_blank" rel="noopener"><span class="k">Gigarte</span><span class="v">gigarte.com/saracitarella</span></a></li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer class="foot wrap">
+  <span>© <span id="anno"></span> Sara Citarella</span>
+  <span>Tutte le immagini sono protette da diritto d'autore.</span>
+</footer>
+
+<dialog id="scheda" aria-labelledby="scheda-titolo">
+  <div class="sheet">
+    <figure class="sheet-img" id="scheda-img"></figure>
+    <div class="sheet-info">
+      <p class="kicker" id="scheda-num"></p>
+      <h3 id="scheda-titolo"></h3>
+      <dl id="scheda-dati"></dl>
+      <div class="sheet-desc" id="scheda-desc"></div>
+      <a class="cta" id="scheda-cta" href="#" target="_blank" rel="noopener">Chiedi informazioni</a>
+    </div>
+  </div>
+  <div class="sheet-nav">
+    <button type="button" id="prec" aria-label="Opera precedente">←</button>
+    <button type="button" id="succ" aria-label="Opera successiva">→</button>
+    <button type="button" id="chiudi">Chiudi</button>
+  </div>
+</dialog>
+
+<script src="app.js"></script>
+</body>
+</html>

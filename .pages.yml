@@ -1,0 +1,39 @@
+# Configurazione di Pages CMS (https://pagescms.org):
+# il pannello dove Sara aggiunge e modifica le opere senza toccare il codice.
+media:
+  input: immagini/opere
+  output: immagini/opere
+  extensions: [jpg, jpeg, png, webp]
+
+content:
+  - name: opere
+    label: Opere e testi del sito
+    type: file
+    path: opere.json
+    format: json
+    fields:
+      - name: opere
+        label: Opere
+        type: object
+        list: true
+        fields:
+          - { name: immagine, label: "Foto dell'opera", type: image }
+          - { name: titolo, label: Titolo, type: string, required: true }
+          - { name: anno, label: Anno, type: number, required: true }
+          - { name: larghezza, label: "Larghezza (cm)", type: number }
+          - { name: altezza, label: "Altezza (cm)", type: number }
+          - { name: tecnica, label: Tecnica, type: string, description: "Es. Acrilico oppure Mista: acrilico, materico" }
+          - { name: disponibile, label: "Disponibile per la vendita", type: boolean, default: true }
+          - { name: prezzo, label: "Prezzo in € (facoltativo)", type: number }
+          - { name: descrizione, label: "Testo che accompagna l'opera (facoltativo)", type: text }
+          - { name: supporto, label: Supporto, type: string, default: Tela e legno }
+          - { name: profondita, label: "Profondità (cm, facoltativa)", type: number }
+      - name: biografia
+        label: Biografia (ogni a capo è un paragrafo)
+        type: text
+      - name: ritratto
+        label: Ritratto di Sara
+        type: image
+      - name: email_contatto
+        label: Email di contatto
+        type: string
