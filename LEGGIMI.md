@@ -21,6 +21,7 @@ immagini/opere/   foto delle opere e ritratto
 - Per nascondere un'opera senza cancellarla: `"pubblicata": false` in `opere.json`.
 - Se `email_contatto` è compilata, compare nei contatti e il pulsante "Chiedi informazioni" apre una mail. Altrimenti porta a Instagram.
 - Ogni opera ha un link diretto da condividere, per esempio `saracitarella.it/#opera-comfort-zone`.
+- Le foto caricate vengono ottimizzate da sole (lato lungo massimo 2400 px, stesso nome e formato) da `.github/workflows/foto.yml`. Si possono caricare gli originali.
 
 ## Da completare
 
