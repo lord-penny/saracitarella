@@ -120,7 +120,13 @@ body::before {
   text-transform: uppercase; letter-spacing: -0.03em; text-decoration: none; white-space: nowrap;
 }
 .barra-logo span:last-child { color: var(--rosso); }
-.barra-link { display: flex; gap: clamp(0.9rem, 3vw, 2rem); }
+@media (max-width: 600px) {
+  .barra { gap: 0.75rem; }
+  .barra-logo { font-size: clamp(1.1rem, 5.6vw, 1.7rem); }
+  .barra-link { gap: clamp(0.6rem, 3vw, 1rem); }
+  .barra-link a { font-size: clamp(0.62rem, 2.9vw, 0.78rem); letter-spacing: 0.06em; }
+}
+.barra-link { display: flex; align-items: center; gap: clamp(0.9rem, 3vw, 2rem); }
 .barra-link a { font: 600 0.78rem/1 var(--testo); letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; }
 .barra a:hover { color: var(--giallo); }
 .barra-logo:hover span { color: inherit; }
