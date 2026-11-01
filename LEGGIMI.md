@@ -17,7 +17,7 @@ immagini/opere/   foto delle opere e ritratto
 
 - Le opere sono ordinate dalla più recente. Il numero di catalogo (01, 02…) parte dalla più vecchia.
 - Senza foto, un'opera compare come riquadro grigio "Foto in arrivo", nelle sue proporzioni reali.
-- `disponibile: false` mostra "Non disponibile" e nasconde il prezzo. Senza `prezzo` il prezzo non compare.
+- `disponibile: false` mostra "Venduta" e nasconde il prezzo. Senza `prezzo` il prezzo non compare.
 - Per nascondere un'opera senza cancellarla: `"pubblicata": false` in `opere.json`.
 - Se `email_contatto` è compilata, compare nei contatti e il pulsante "Chiedi informazioni" apre una mail. Altrimenti porta a Instagram.
 - Ogni opera ha un link diretto da condividere, per esempio `saracitarella.it/#opera-comfort-zone`.

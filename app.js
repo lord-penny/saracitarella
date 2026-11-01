@@ -101,7 +101,7 @@
     if (o.disponibile === false) {
       const s = document.createElement('span');
       s.className = 'sold';
-      s.textContent = ' · Non disponibile';
+      s.textContent = ' · Venduta';
       m.append(s);
     }
 
@@ -159,7 +159,7 @@
       ['Tecnica', o.tecnica],
       ['Supporto', o.supporto],
       ['Misure', misure(o, true)],
-      ['Stato', o.disponibile === false ? 'Non disponibile' : 'Disponibile'],
+      ['Stato', o.disponibile === false ? 'Venduta' : 'Disponibile'],
       ['Prezzo', o.disponibile !== false && o.prezzo ? '€ ' + Number(o.prezzo).toLocaleString('it-IT') : '']
     ].filter(r => r[1]);
     const dl = $('scheda-dati');

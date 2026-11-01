@@ -23,7 +23,7 @@ content:
           - { name: larghezza, label: "Larghezza (cm)", type: number }
           - { name: altezza, label: "Altezza (cm)", type: number }
           - { name: tecnica, label: Tecnica, type: string, description: "Es. Acrilico oppure Mista: acrilico, materico" }
-          - { name: disponibile, label: "Disponibile per la vendita", type: boolean, default: true }
+          - { name: disponibile, label: "Disponibile per la vendita", type: boolean, default: true, description: "Togli la spunta se è venduta" }
           - { name: prezzo, label: "Prezzo in € (facoltativo)", type: number }
           - { name: descrizione, label: "Testo che accompagna l'opera (facoltativo)", type: text }
           - { name: supporto, label: Supporto, type: string, default: Tela e legno }
