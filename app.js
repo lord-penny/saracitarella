@@ -30,9 +30,8 @@
   $('bio-testo').replaceChildren(...paragrafi(dati.biografia));
   if (dati.ritratto) {
     const img = new Image();
-    img.src = dati.ritratto;
     img.alt = 'Ritratto di Sara Citarella';
-    img.onerror = () => img.remove();
+    carica(img, dati.ritratto, 1000, () => img.remove());
     $('ritratto').prepend(img);
   }
 
@@ -43,10 +42,9 @@
       const fig = document.createElement('figure');
       fig.addEventListener('click', () => grande(studio.map(x => x.immagine), i, 'Nello studio'));
       const img = new Image();
-      img.src = f.immagine;
       img.alt = f.didascalia || 'Sara Citarella nello studio';
       img.loading = 'lazy';
-      img.onerror = () => fig.remove();
+      carica(img, f.immagine, 480, () => fig.remove());
       fig.append(img);
       if (f.didascalia) {
         const c = document.createElement('figcaption');
@@ -97,8 +95,8 @@
         b.type = 'button';
         b.setAttribute('aria-label', 'Apri la foto ' + (i + 1) + ' di ' + m.titolo);
         const img = new Image();
-        img.src = src; img.alt = ''; img.loading = 'lazy';
-        img.onerror = () => b.remove();
+        img.alt = ''; img.loading = 'lazy';
+        carica(img, src, 480, () => b.remove());
         b.append(img);
         b.addEventListener('click', () => grande(foto, i, m.titolo));
         return b;
@@ -156,8 +154,7 @@
       const img = new Image();
       img.alt = o.titolo + ', opera di Sara Citarella';
       img.loading = 'lazy';
-      img.onerror = () => { img.remove(); fig.append(vuoto(w, h)); };
-      img.src = o.immagine;
+      carica(img, o.immagine, 1000, () => { img.remove(); fig.append(vuoto(w, h)); });
       fig.append(img);
     } else {
       fig.append(vuoto(w, h));
@@ -219,8 +216,8 @@
       b.setAttribute('aria-label', 'Foto ' + (i + 1) + ' di ' + foto.length);
       b.setAttribute('aria-pressed', i === 0);
       const img = new Image();
-      img.src = src; img.alt = ''; img.loading = 'lazy';
-      img.onerror = () => b.remove();
+      img.alt = ''; img.loading = 'lazy';
+      carica(img, src, 480, () => b.remove());
       b.append(img);
       b.addEventListener('click', () => {
         thumbs.querySelectorAll('button').forEach(x => x.setAttribute('aria-pressed', x === b));
@@ -270,8 +267,7 @@
     if (src) {
       const img = new Image();
       img.alt = titolo;
-      img.onerror = () => { img.remove(); fig.classList.add('missing'); fig.textContent = 'Foto in arrivo'; };
-      img.src = src;
+      carica(img, src, grande_lato(), () => { img.remove(); fig.classList.add('missing'); fig.textContent = 'Foto in arrivo'; });
       fig.append(img);
     } else {
       fig.classList.add('missing');
@@ -308,7 +304,7 @@
   }
   function vai(i) {
     fgI = (i + fgFoto.length) % fgFoto.length;
-    $('foto-grande-img').src = fgFoto[fgI];
+    carica($('foto-grande-img'), fgFoto[fgI], grande_lato());
     $('foto-grande-img').alt = fgTesto;
     $('foto-grande-testo').textContent = fgTesto + ' · ' + (fgI + 1) + '/' + fgFoto.length;
   }
@@ -359,6 +355,22 @@
       ['#ffd60a', 0.0, 0.0, 0.48, 0.5], ['#ff1f3d', 0.0, 0.53, 0.48, 1.0],
       ['#f7f6f2', 0.51, 0.0, 1.0, 0.5], ['#1f3bff', 0.51, 0.53, 1.0, 1.0]
     ], '#111111', 5));
+  }
+
+  // Versioni leggere delle foto (immagini/web/<lato>/<nome>.webp, create dalla GitHub Action).
+  // Se la versione manca si usa la foto originale.
+  function web(src, lato) {
+    const m = /^immagini\/opere\/([^/]+)\.(jpe?g|png|webp)$/i.exec(src || '');
+    return m ? 'immagini/web/' + lato + '/' + m[1] + '.webp' : src;
+  }
+  function carica(img, src, lato, poi) {
+    const v = web(src, lato);
+    img.decoding = 'async';
+    img.onerror = v !== src ? () => { img.onerror = poi || null; img.src = src; } : (poi || null);
+    img.src = v;
+  }
+  function grande_lato() {
+    return Math.max(innerWidth, innerHeight) * (devicePixelRatio || 1) > 1300 ? 1800 : 1000;
   }
 
   function slug(t) {

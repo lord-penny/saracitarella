@@ -32,5 +32,6 @@ immagini/opere/   foto delle opere e ritratto
 ## SEO
 - `index.html`: titolo, descrizione, Open Graph, dati strutturati (Person, WebSite), favicon.
 - `opere/<nome>/`: una pagina per opera con il proprio indirizzo, generata da `.github/scripts/pagine.py` insieme a `sitemap.xml`. La GitHub Action "Pagine delle opere" le rigenera da sola quando cambia `opere.json`: non vanno modificate a mano.
+- `immagini/web/{480,1000,1800}/`: versioni WebP leggere delle foto, create da `.github/scripts/versioni.py` (Action "Ottimizza foto"). Il sito le usa e ripiega sull originale se mancano.
 - Dopo una modifica a `style.css` o `app.js`, aggiornare il numero `?v=` in `index.html`.
 - Font ospitati in `font/` (niente Google Fonts, per il GDPR). Pagina `privacy/`. Content-Security-Policy nel `<head>` di ogni pagina: se si aggiunge un servizio esterno va aggiornata.

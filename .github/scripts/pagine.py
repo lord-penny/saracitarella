@@ -44,6 +44,13 @@ def prezzo(o):
     return '€ ' + f"{int(o['prezzo']):,}".replace(',', '.')
 
 
+def web(src, lato):
+    # versione leggera creata da versioni.py, se esiste
+    p = Path(src)
+    v = Path('immagini/web') / str(lato) / (p.stem + '.webp')
+    return str(v) if src.startswith('immagini/opere/') and (RADICE / v).exists() else src
+
+
 def assoluto(src):
     return f"{SITO}/{src.lstrip('/')}" if src else ''
 
@@ -79,8 +86,8 @@ for o in opere:
         cta = f'<a class="cta" href="mailto:{e(email)}?subject={oggetto}">Chiedi informazioni</a>'
     else:
         cta = '<a class="cta" href="https://www.instagram.com/saracitarella.art" target="_blank" rel="noopener">Chiedi informazioni</a>'
-    altre = ''.join(f'<img src="/{e(f)}" alt="{e(o["titolo"])}, Sara Citarella: foto {i + 2}" loading="lazy">' for i, f in enumerate(foto[1:]))
-    img = (f'<img src="/{e(foto[0])}" alt="{e(o["titolo"])}, {e(tecnica)}, Sara Citarella">' if foto else '')
+    altre = ''.join(f'<img src="/{e(web(f, 480))}" alt="{e(o["titolo"])}, Sara Citarella: foto {i + 2}" loading="lazy">' for i, f in enumerate(foto[1:]))
+    img = (f'<img src="/{e(web(foto[0], 1800))}" alt="{e(o["titolo"])}, {e(tecnica)}, Sara Citarella">' if foto else '')
 
     opera_ld = {
         '@context': 'https://schema.org',

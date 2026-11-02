@@ -20,12 +20,12 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - run: python .github/scripts/pagine.py
+      - run: pip install --quiet pillow && python .github/scripts/versioni.py && python .github/scripts/pagine.py
       - name: Salva e ripubblica
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          git add -A opere sitemap.xml
+          git add -A opere sitemap.xml immagini/web
           if git diff --cached --quiet; then exit 0; fi
           git config user.name "github-actions[bot]"
           git config user.email "41898283+github-actions[bot]@users.noreply.github.com"

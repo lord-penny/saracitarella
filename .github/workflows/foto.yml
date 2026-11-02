@@ -1,11 +1,12 @@
 # Quando si carica una foto dal pannello, la ottimizza per il web
-# e la rimette al suo posto con lo stesso nome.
+# e la rimette al suo posto con lo stesso nome; poi crea le versioni
+# leggere (immagini/web) e aggiorna le pagine delle opere.
 name: Ottimizza foto
 
 on:
   push:
     branches: [main]
-    paths: ['immagini/**']
+    paths: ['immagini/opere/**']
 
 permissions:
   contents: write
@@ -24,18 +25,24 @@ jobs:
       - run: pip install --quiet pillow
       - name: Ottimizza le foto nuove
         run: |
-          git diff --name-only --diff-filter=AM "${{ github.event.before }}" "${{ github.sha }}" -- immagini/ > nuove.txt || git ls-files immagini/ > nuove.txt
+          git diff --name-only --diff-filter=AM "${{ github.event.before }}" "${{ github.sha }}" -- immagini/opere/ > nuove.txt || git ls-files immagini/opere/ > nuove.txt
           cat nuove.txt
           xargs -a nuove.txt -d '\n' -r python .github/scripts/ottimizza.py
+          xargs -a nuove.txt -d '\n' -r python .github/scripts/versioni.py
           rm nuove.txt
+      - name: Versioni leggere mancanti e pagine delle opere
+        run: |
+          python .github/scripts/versioni.py
+          python .github/scripts/pagine.py
       - name: Salva e ripubblica
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          if git diff --quiet; then exit 0; fi
+          git add -A immagini opere sitemap.xml
+          if git diff --cached --quiet; then exit 0; fi
           git config user.name "github-actions[bot]"
           git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
-          git commit -qam "Foto ottimizzate per il web"
+          git commit -qm "Foto ottimizzate per il web"
           git pull --rebase -q origin main
           git push -q origin main
           gh api -X POST "repos/${{ github.repository }}/pages/builds" || true
