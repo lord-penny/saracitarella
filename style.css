@@ -77,11 +77,11 @@ a { color: inherit; }
 .blocks {
   display: grid; gap: 6px;
   grid-template-columns: repeat(6, minmax(0, 1fr));
-  grid-template-rows: minmax(9rem, 1.4fr) minmax(7rem, 1fr) minmax(6rem, 0.8fr);
-  grid-template-areas: "g g g g r r" "c c b b b b" "c c n n n n";
+  grid-template-rows: minmax(8rem, 1.3fr) minmax(6rem, 1fr) minmax(6rem, 1fr) minmax(5rem, 0.7fr);
+  grid-template-areas: "g g g g r r" "c c b b b b" "c c k k k k" "c c n n n n";
 }
 .b-giallo { grid-area: g; } .b-rosso { grid-area: r; } .b-blu { grid-area: b; }
-.b-carta { grid-area: c; } .b-nero { grid-area: n; }
+.b-contatti { grid-area: k; } .b-carta { grid-area: c; } .b-nero { grid-area: n; }
 .b {
   position: relative; display: flex; flex-direction: column; justify-content: space-between;
   padding: 1rem 1.1rem; text-decoration: none; overflow: hidden;
@@ -92,6 +92,7 @@ a.b:hover .b-a { transform: translate(4px, 4px); }
 .b-giallo { background: var(--giallo); color: var(--nero); }
 .b-rosso { background: var(--rosso); color: var(--nero); }
 .b-blu { background: var(--blu); color: var(--carta); }
+.b-contatti { background: var(--rosso); color: var(--nero); }
 .b-carta { background: var(--carta); color: var(--nero); justify-content: flex-end; }
 .b-carta p { margin: 0; font: 500 clamp(0.95rem, 1.3vw, 1.15rem)/1.4 var(--testo); max-width: 24ch; }
 .b-nero { background: #000; color: var(--carta); border: 1px solid #2a2a2a; flex-direction: row; align-items: flex-end; }
@@ -121,10 +122,10 @@ body::before {
 }
 .barra-logo span:last-child { color: var(--rosso); }
 @media (max-width: 600px) {
-  .barra { gap: 0.75rem; }
-  .barra-logo { font-size: clamp(1.1rem, 5.6vw, 1.7rem); }
-  .barra-link { gap: clamp(0.6rem, 3vw, 1rem); }
-  .barra-link a { font-size: clamp(0.62rem, 2.9vw, 0.78rem); letter-spacing: 0.06em; }
+  .barra { gap: 0.6rem; }
+  .barra-logo { font-size: clamp(1rem, 4.7vw, 1.7rem); }
+  .barra-link { gap: clamp(0.5rem, 2.4vw, 1rem); }
+  .barra-link a { font-size: clamp(0.58rem, 2.7vw, 0.78rem); letter-spacing: 0.04em; }
 }
 .barra-link { display: flex; align-items: center; gap: clamp(0.9rem, 3vw, 2rem); }
 .barra-link a { font: 600 0.78rem/1 var(--testo); letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; }
@@ -315,4 +316,9 @@ dialog::backdrop { background: var(--nero); }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .b, .b-a, .tile { transition: none; }
+}
+/* Telefoni stretti: nella barra solo le iniziali dipinte, così entrano tutte le voci */
+@media (max-width: 409px) {
+  .barra .barra-logo span { font-size: 0; letter-spacing: 0; }
+  .barra .barra-logo b { font-size: 1.6rem; }
 }
