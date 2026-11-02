@@ -119,9 +119,9 @@ for o in opere:
 <meta property="og:description" content="{e(meta)}">
 {f'<meta property="og:image" content="{e(assoluto(foto[0]))}">' if foto else ''}
 <meta name="twitter:card" content="summary_large_image">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;900&family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,800&family=Schibsted+Grotesk:wght@400;500;600;700&display=swap">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<link rel="stylesheet" href="/font/font.css?v={OGGI}">
 <link rel="stylesheet" href="/style.css?v={OGGI}">
 <script type="application/ld+json">{json.dumps(opera_ld, ensure_ascii=False)}</script>
 </head>
@@ -144,7 +144,7 @@ for o in opere:
   </div>
 </main>
 <footer class="foot wrap">
-  <span>© Sara Citarella · <a href="/">saracitarella.it</a></span>
+  <span>© Sara Citarella · <a href="/">saracitarella.it</a> · <a href="/privacy/">Privacy</a></span>
   <span class="firma">Made in Napoli with <span class="cuore" aria-label="love">♥</span> da <a href="https://morric.it" target="_blank" rel="noopener">Morric</a></span>
 </footer>
 </body>

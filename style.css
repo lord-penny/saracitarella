@@ -212,6 +212,8 @@ h2 { margin: 0; font: 900 clamp(3.4rem, 11vw, 9rem)/0.82 var(--display); text-tr
 .links a:hover .v { color: var(--giallo); }
 @media (max-width: 560px) { .links a { grid-template-columns: minmax(0, 1fr); gap: 0.35rem; } }
 
+.foot-link { color: var(--carta); text-decoration: underline; text-underline-offset: 3px; margin-left: 0.5rem; }
+.foot-link:hover { color: var(--giallo); }
 .firma a { color: var(--carta); text-decoration: underline; text-underline-offset: 3px; }
 .firma a:hover { color: var(--giallo); }
 .cuore { color: var(--rosso); }
@@ -335,3 +337,11 @@ dialog::backdrop { background: var(--nero); }
 .pagina-altre { display: flex; flex-wrap: wrap; gap: 0.5rem; }
 .pagina-altre img { width: 6rem; height: 6rem; object-fit: cover; }
 .pagina-opera .foot a { color: var(--carta); }
+
+/* Pagina privacy */
+.testo-legale { max-width: 46rem; padding-block: 3rem 4rem; }
+.testo-legale h1 { margin: 0 0 1.5rem; font: 900 clamp(2.6rem, 7vw, 5rem)/0.9 var(--display); text-transform: uppercase; }
+.testo-legale h2 { margin: 2.2rem 0 0.6rem; font: 700 1.3rem/1.25 var(--testo); }
+.testo-legale p, .testo-legale li { line-height: 1.65; }
+.testo-legale a { color: inherit; text-underline-offset: 3px; }
+.testo-legale .agg { color: var(--muto); font-size: 0.9rem; }
