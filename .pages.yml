@@ -20,7 +20,7 @@ content:
           - { name: immagine, label: "Foto dell'opera", type: image }
           - { name: galleria, label: "Altre foto (dettagli, ambientate)", type: image, list: true }
           - { name: titolo, label: Titolo, type: string, required: true }
-          - { name: anno, label: Anno, type: number, required: true }
+          - { name: anno, label: Anno, type: number }
           - { name: larghezza, label: "Larghezza (cm)", type: number }
           - { name: altezza, label: "Altezza (cm)", type: number }
           - { name: tecnica, label: Tecnica, type: string, description: "Es. Acrilico oppure Mista: acrilico, materico" }
@@ -29,6 +29,7 @@ content:
           - { name: descrizione, label: "Testo che accompagna l'opera (facoltativo)", type: text }
           - { name: supporto, label: Supporto, type: string, default: Tela e legno }
           - { name: profondita, label: "Profondità (cm, facoltativa)", type: number }
+          - { name: pubblicata, label: "Pubblicata sul sito", type: boolean, default: true, description: "Togli la spunta per tenerla nascosta (bozza)" }
       - name: biografia
         label: Biografia (ogni a capo è un paragrafo)
         type: text

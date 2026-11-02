@@ -100,7 +100,7 @@
       "prezzo": 380,
       "disponibile": true,
       "immagine": "immagini/opere/comfort-zone.jpg",
-      "descrizione": "",
+      "descrizione": "Comodamente intrappolato in uno schema imperfetto, irregolare, sporco. L'errore di credere che sia un luogo protetto che al contrario risulta impervio, chiuso. Restare bloccati nello schema autoprodotto che nella realtà dei fatti è tutto tranne che confortevole.",
       "galleria": [
         "immagini/opere/comfort-zone-foto-2.jpg",
         "immagini/opere/comfort-zone-foto-3.jpg"
@@ -117,13 +117,13 @@
       "prezzo": 330,
       "disponibile": true,
       "immagine": "immagini/opere/pink-drama.jpg",
-      "descrizione": "",
+      "descrizione": "Anime rosa dai pensieri neri che delineano, segnano, danneggiano ed infliggono il dramma. «Il rosa»: quanti pregiudizi abbiamo sul rosa? Ciò che è candido è a maggior ragione ricettivo, fragile ma di natura forte.",
       "galleria": [
         "immagini/opere/pink-drama-foto-2.jpg"
       ]
     },
     {
-      "titolo": "shine",
+      "titolo": "You always shine, they will believe it",
       "anno": 2021,
       "tecnica": "Mista: acrilico, chiodi, rame",
       "supporto": "Tela e legno",
@@ -133,7 +133,7 @@
       "prezzo": 340,
       "disponibile": true,
       "immagine": "immagini/opere/shine.jpg",
-      "descrizione": "",
+      "descrizione": "Risplendi, sempre. Ci crederanno. Finché il tuo riverbero acceca la vista dell'osservatore che, come un prisma, non potrà fare altro che risplendere grazie alla tua luce. Il buio è per pochi vedenti, la luce è per tutti gli osservatori distratti.",
       "galleria": [
         "immagini/opere/shine-foto-2.jpg",
         "immagini/opere/shine-foto-3.jpg",
@@ -151,7 +151,7 @@
       "prezzo": 280,
       "disponibile": true,
       "immagine": "immagini/opere/back-home.jpg",
-      "descrizione": "",
+      "descrizione": "Le radici si danno per scontate. Se ti dicessi che le mie erano soltanto un ricordo sbiadito fino a ieri? Finalmente ho visto con gli occhi coscienti e finalmente so da dove vengo e, anche se continuo a non sapere dove sto andando, ho conosciuto la felicità.",
       "galleria": [
         "immagini/opere/back-home-foto-2.jpg",
         "immagini/opere/back-home-foto-3.jpg",
@@ -176,7 +176,7 @@
       ]
     },
     {
-      "titolo": "brain matter function and dysfunction",
+      "titolo": "Brain Matter: function and dysfunction",
       "anno": 2021,
       "tecnica": "Mista: acrilico, chiodi",
       "supporto": "Tela e legno",
@@ -186,12 +186,84 @@
       "prezzo": 480,
       "disponibile": true,
       "immagine": "immagini/opere/brain-matter-function-and-dysfunction.jpg",
-      "descrizione": "",
+      "descrizione": "La nostra mente è come un meccanismo imperfetto e complesso fatto di funzioni e spesso di «disfunzioni». Dove si fissa e replica ripetutamente un pensiero in contrasto perpetuo con le aggressioni e le controversie degli umori e dei sentimenti. Nel buio della notte, nel silenzio dei nostri pensieri, si conficcano i nostri peggiori stati disfunzionali. Il filo conduttore mette in continua connessione la notte con le violente possibilità dettate dalle nostre emozioni.",
       "galleria": [
         "immagini/opere/brain-matter-function-and-dysfunction-foto-2.jpg",
         "immagini/opere/brain-matter-function-and-dysfunction-foto-3.jpg",
         "immagini/opere/brain-matter-function-and-dysfunction-foto-4.jpg"
       ]
+    },
+    {
+      "titolo": "Anomaly",
+      "tecnica": "Acrilico",
+      "supporto": "Tela",
+      "larghezza": 50,
+      "altezza": 70,
+      "disponibile": true,
+      "immagine": "immagini/opere/anomaly.jpg",
+      "galleria": [],
+      "descrizione": "Anomalia è quando, distrattamente, ci diamo una possibilità; la regola è dove per abitudine ripetiamo lo stesso atto, occasione dopo occasione, sbagliando. L'obiettivo è ribaltare il nostro schema. Che sia norma vedere emergere quello che sentiamo e, al contrario, che diventi rarità filtrarlo.",
+      "pubblicata": false
+    },
+    {
+      "titolo": "Mistakes and chance",
+      "tecnica": "Acrilico",
+      "supporto": "Tela",
+      "larghezza": 50,
+      "altezza": 70,
+      "disponibile": true,
+      "immagine": "immagini/opere/mistakes-and-chance.jpg",
+      "galleria": [
+        "immagini/opere/mistakes-and-chance-foto-2.jpg"
+      ],
+      "descrizione": "Siamo fatti di errori quanto di possibilità di rimediare agli stessi. La domanda è se siamo ancora capaci a riconoscerli. Sono proprio davanti ai nostri occhi, si ripropongono a intervalli regolari spezzando i mille nostri umori, fatti di colori.",
+      "pubblicata": false
+    },
+    {
+      "titolo": "Chaotic feelings",
+      "tecnica": "Acrilico",
+      "supporto": "Tela",
+      "larghezza": 40,
+      "altezza": 60,
+      "disponibile": true,
+      "immagine": "immagini/opere/chaotic.jpg",
+      "galleria": [
+        "immagini/opere/chaotic-foto-2.jpg",
+        "immagini/opere/chaotic-foto-3.jpg"
+      ],
+      "descrizione": "Quando il profondo incontra il conflitto, quando la sofferenza coincide con l'amore, quando la mescolanza degli umori genera il disagio. Il caos dei sentimenti che si incrociano ma non si fondono. Tutto è chiaro ma eccessivamente conflittuale. Portiamo dentro di noi una guerra, ma restiamo sempre attratti dalla luce.",
+      "pubblicata": false
+    },
+    {
+      "titolo": "In front of the mirror",
+      "tecnica": "Acrilico",
+      "supporto": "Tela",
+      "larghezza": 40,
+      "altezza": 60,
+      "disponibile": true,
+      "immagine": "immagini/opere/in-front-of-the-mirror.jpg",
+      "galleria": [
+        "immagini/opere/in-front-of-the-mirror-foto-2.jpg",
+        "immagini/opere/in-front-of-the-mirror-foto-3.jpg",
+        "immagini/opere/in-front-of-the-mirror-foto-4.jpg"
+      ],
+      "descrizione": "Davanti allo specchio, guardandoti negli occhi, cercando dentro te stesso, che cosa vedi? Quali colori predominano la tua persona? Riesci ancora a scorgere il bagliore tra le trame complesse dell'anima?",
+      "pubblicata": false
+    },
+    {
+      "titolo": "Fallimenti",
+      "tecnica": "Mista: materico, acrilico",
+      "supporto": "Tela",
+      "larghezza": 50,
+      "altezza": 70,
+      "disponibile": true,
+      "immagine": "immagini/opere/fallimenti.jpg",
+      "galleria": [
+        "immagini/opere/fallimenti-foto-2.jpg",
+        "immagini/opere/fallimenti-foto-3.jpg"
+      ],
+      "descrizione": "Seguendo linee inesatte, strade sconnesse, senza paura di sbagliare o di uscire dallo sterrato. Dove inizia il fuoripista, dove inciampa il fallimento, è lì che incontriamo le possibilità. Non nascondere ciò che non è riuscito ma mostralo. Brilla nel buio.",
+      "pubblicata": false
     }
   ],
   "studio": [
@@ -295,6 +367,10 @@
       "date": "26 febbraio 2022",
       "foto": [
         "immagini/opere/mostra-bagnoli-2022-02-invito.jpg",
+        "immagini/opere/mostra-bagnoli-2021-12-1.jpg",
+        "immagini/opere/mostra-bagnoli-2021-12-2.jpg",
+        "immagini/opere/mostra-bagnoli-2021-12-3.jpg",
+        "immagini/opere/mostra-bagnoli-2021-12-4.jpg",
         "immagini/opere/mostra-bagnoli-2022-02-1.jpg",
         "immagini/opere/mostra-bagnoli-2022-02-2.jpg",
         "immagini/opere/mostra-bagnoli-2022-02-3.jpg",
