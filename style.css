@@ -325,3 +325,13 @@ dialog::backdrop { background: var(--nero); }
   .barra .barra-logo span { font-size: 0; letter-spacing: 0; }
   .barra .barra-logo b { font-size: 1.6rem; }
 }
+
+/* Pagina singola di un'opera (opere/<nome>/), creata da .github/scripts/pagine.py */
+.pagina-opera { background: var(--carta); color: var(--nero); }
+.pagina-opera .sheet-barra { position: sticky; top: 0; transform: none; }
+.pagina-opera a.torna { text-decoration: none; }
+.pagina-opera .sheet { padding-bottom: 3rem; }
+.pagina-opera .sheet-info h1 { margin: 0; font: 900 clamp(2.4rem, 5vw, 4.6rem)/0.88 var(--display); text-transform: uppercase; text-wrap: balance; overflow-wrap: anywhere; }
+.pagina-altre { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.pagina-altre img { width: 6rem; height: 6rem; object-fit: cover; }
+.pagina-opera .foot a { color: var(--carta); }

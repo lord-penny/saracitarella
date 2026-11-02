@@ -154,7 +154,7 @@
     fig.className = 'tile-img';
     if (o.immagine) {
       const img = new Image();
-      img.alt = o.titolo;
+      img.alt = o.titolo + ', opera di Sara Citarella';
       img.loading = 'lazy';
       img.onerror = () => { img.remove(); fig.append(vuoto(w, h)); };
       img.src = o.immagine;
