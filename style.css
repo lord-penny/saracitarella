@@ -212,6 +212,9 @@ h2 { margin: 0; font: 900 clamp(3.4rem, 11vw, 9rem)/0.82 var(--display); text-tr
 .links a:hover .v { color: var(--giallo); }
 @media (max-width: 560px) { .links a { grid-template-columns: minmax(0, 1fr); gap: 0.35rem; } }
 
+.firma a { color: var(--carta); text-decoration: underline; text-underline-offset: 3px; }
+.firma a:hover { color: var(--giallo); }
+.cuore { color: var(--rosso); }
 .foot { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.5rem 2rem; padding-block: 1.75rem 2.25rem; background: var(--nero); color: #a9a8a3; font-size: 0.85rem; border-top: 1px solid #333; }
 
 /* Nello studio */
