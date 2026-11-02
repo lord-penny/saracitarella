@@ -37,8 +37,10 @@ def misure(o):
 
 
 def prezzo(o):
-    if o.get('disponibile') is False or not o.get('prezzo'):
+    if o.get('disponibile') is False:
         return ''
+    if not o.get('prezzo'):
+        return 'Su richiesta'
     return '€ ' + f"{int(o['prezzo']):,}".replace(',', '.')
 
 

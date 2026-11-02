@@ -173,7 +173,7 @@
     if (o.disponibile === false) {
       const s = document.createElement('span');
       s.className = 'sold';
-      s.textContent = ' · Venduta';
+      s.textContent = (m.textContent ? ' · ' : '') + 'Venduta';
       m.append(s);
     }
 
@@ -238,7 +238,7 @@
       ['Supporto', o.supporto],
       ['Misure', misure(o, true)],
       ['Stato', o.disponibile === false ? 'Venduta' : 'Disponibile'],
-      ['Prezzo', o.disponibile !== false && o.prezzo ? '€ ' + Number(o.prezzo).toLocaleString('it-IT') : '']
+      ['Prezzo', o.disponibile === false ? '' : o.prezzo ? '€ ' + Number(o.prezzo).toLocaleString('it-IT') : 'Su richiesta']
     ].filter(r => r[1]);
     const dl = $('scheda-dati');
     dl.replaceChildren();

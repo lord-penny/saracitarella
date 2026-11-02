@@ -25,7 +25,7 @@
       "altezza": 50,
       "profondita": 2,
       "prezzo": 300,
-      "disponibile": true,
+      "disponibile": false,
       "immagine": "immagini/opere/stratificazioni.jpg",
       "descrizione": "Conosci la paura? Può aiutarti a sopravvivere."
     },
@@ -203,7 +203,7 @@
       "immagine": "immagini/opere/anomaly.jpg",
       "galleria": [],
       "descrizione": "Anomalia è quando, distrattamente, ci diamo una possibilità; la regola è dove per abitudine ripetiamo lo stesso atto, occasione dopo occasione, sbagliando. L'obiettivo è ribaltare il nostro schema. Che sia norma vedere emergere quello che sentiamo e, al contrario, che diventi rarità filtrarlo.",
-      "pubblicata": false
+      "pubblicata": true
     },
     {
       "titolo": "Mistakes and chance",
@@ -211,13 +211,13 @@
       "supporto": "Tela",
       "larghezza": 50,
       "altezza": 70,
-      "disponibile": true,
+      "disponibile": false,
       "immagine": "immagini/opere/mistakes-and-chance.jpg",
       "galleria": [
         "immagini/opere/mistakes-and-chance-foto-2.jpg"
       ],
       "descrizione": "Siamo fatti di errori quanto di possibilità di rimediare agli stessi. La domanda è se siamo ancora capaci a riconoscerli. Sono proprio davanti ai nostri occhi, si ripropongono a intervalli regolari spezzando i mille nostri umori, fatti di colori.",
-      "pubblicata": false
+      "pubblicata": true
     },
     {
       "titolo": "Chaotic feelings",
@@ -232,7 +232,7 @@
         "immagini/opere/chaotic-foto-3.jpg"
       ],
       "descrizione": "Quando il profondo incontra il conflitto, quando la sofferenza coincide con l'amore, quando la mescolanza degli umori genera il disagio. Il caos dei sentimenti che si incrociano ma non si fondono. Tutto è chiaro ma eccessivamente conflittuale. Portiamo dentro di noi una guerra, ma restiamo sempre attratti dalla luce.",
-      "pubblicata": false
+      "pubblicata": true
     },
     {
       "titolo": "In front of the mirror",
@@ -248,7 +248,7 @@
         "immagini/opere/in-front-of-the-mirror-foto-4.jpg"
       ],
       "descrizione": "Davanti allo specchio, guardandoti negli occhi, cercando dentro te stesso, che cosa vedi? Quali colori predominano la tua persona? Riesci ancora a scorgere il bagliore tra le trame complesse dell'anima?",
-      "pubblicata": false
+      "pubblicata": true
     },
     {
       "titolo": "Fallimenti",
@@ -263,6 +263,18 @@
         "immagini/opere/fallimenti-foto-3.jpg"
       ],
       "descrizione": "Seguendo linee inesatte, strade sconnesse, senza paura di sbagliare o di uscire dallo sterrato. Dove inizia il fuoripista, dove inciampa il fallimento, è lì che incontriamo le possibilità. Non nascondere ciò che non è riuscito ma mostralo. Brilla nel buio.",
+      "pubblicata": true
+    },
+    {
+      "titolo": "red",
+      "disponibile": false,
+      "immagine": "immagini/opere/red.jpg",
+      "pubblicata": false
+    },
+    {
+      "titolo": "white rage",
+      "disponibile": false,
+      "immagine": "immagini/opere/white-rage.jpg",
       "pubblicata": false
     }
   ],
