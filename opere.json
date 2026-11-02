@@ -243,5 +243,59 @@
       "immagine": "immagini/opere/studio-12.jpg",
       "didascalia": ""
     }
+  ],
+  "mostre": [
+    {
+      "anno": 2022,
+      "titolo": "Fuori il recinto / Outside the fence",
+      "tipo": "Collettiva",
+      "luogo": "Belvedere di San Martino, Napoli",
+      "date": "26 ottobre 2022",
+      "foto": [
+        "immagini/opere/mostra-san-martino-2022-10-1.jpg",
+        "immagini/opere/mostra-san-martino-2022-10-2.jpg",
+        "immagini/opere/mostra-san-martino-2022-10-3.jpg",
+        "immagini/opere/mostra-san-martino-2022-10-4.jpg"
+      ]
+    },
+    {
+      "anno": 2022,
+      "titolo": "Mostra (da completare)",
+      "tipo": "Collettiva",
+      "luogo": "Bagnoli, Napoli",
+      "date": "7 ottobre 2022",
+      "foto": [
+        "immagini/opere/mostra-bagnoli-2022-10-1.jpg",
+        "immagini/opere/mostra-bagnoli-2022-10-2.jpg",
+        "immagini/opere/mostra-bagnoli-2022-10-3.jpg",
+        "immagini/opere/mostra-bagnoli-2022-10-4.jpg"
+      ]
+    },
+    {
+      "anno": 2022,
+      "titolo": "Mostra (da completare)",
+      "tipo": "",
+      "luogo": "Bagnoli, Napoli",
+      "date": "26 febbraio 2022",
+      "foto": [
+        "immagini/opere/mostra-bagnoli-2022-02-1.jpg",
+        "immagini/opere/mostra-bagnoli-2022-02-2.jpg",
+        "immagini/opere/mostra-bagnoli-2022-02-3.jpg",
+        "immagini/opere/mostra-bagnoli-2022-02-4.jpg"
+      ]
+    },
+    {
+      "anno": 2021,
+      "titolo": "Mostra (da completare)",
+      "tipo": "",
+      "luogo": "Bagnoli, Napoli",
+      "date": "dicembre 2021",
+      "foto": [
+        "immagini/opere/mostra-bagnoli-2021-12-1.jpg",
+        "immagini/opere/mostra-bagnoli-2021-12-2.jpg",
+        "immagini/opere/mostra-bagnoli-2021-12-3.jpg",
+        "immagini/opere/mostra-bagnoli-2021-12-4.jpg"
+      ]
+    }
   ]
 }

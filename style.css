@@ -225,6 +225,29 @@ h2 { margin: 0; font: 900 clamp(3.4rem, 11vw, 9rem)/0.82 var(--display); text-tr
 .studio-grid img { display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; }
 .studio-grid figcaption { margin-top: 0.4rem; font-size: 0.85rem; color: #a9a8a3; }
 
+/* Mostre */
+.mostre { background: var(--rosso); color: var(--nero); padding-block: clamp(3.5rem, 8vw, 6rem); }
+.mostre h2 { margin: 0 0 2rem; }
+.mostre-lista { list-style: none; margin: 0; padding: 0; border-top: 2px solid var(--nero); }
+.mostra { display: grid; gap: 1rem 2rem; padding-block: 1.5rem; border-bottom: 2px solid var(--nero); }
+@media (min-width: 900px) { .mostra { grid-template-columns: 7rem minmax(0, 1fr) minmax(0, 1.4fr); align-items: start; } }
+.mostra-anno { font: 900 clamp(2.4rem, 5vw, 3.6rem)/0.9 var(--display); }
+.mostra-info h3 { margin: 0 0 0.35rem; font: 700 1.35rem/1.2 var(--testo); }
+.mostra-info p { margin: 0; line-height: 1.5; }
+.mostra-tipo { font: 600 0.76rem/1.7 var(--testo); letter-spacing: 0.12em; text-transform: uppercase; }
+.mostra-foto { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0.5rem; }
+.mostra-foto button { padding: 0; border: 0; background: var(--nero); cursor: pointer; aspect-ratio: 1; overflow: hidden; }
+.mostra-foto img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.3s ease; }
+.mostra-foto button:hover img { transform: scale(1.05); }
+
+.foto-grande { background: var(--nero); color: var(--carta); }
+.foto-grande::backdrop { background: var(--nero); }
+.foto-grande figure { margin: 0; min-height: calc(100dvh - 5.5rem); display: grid; place-items: center; align-content: center; gap: 0.75rem; padding: max(20px, env(safe-area-inset-top, 0px)) 20px 0; }
+.foto-grande img { max-width: 100%; max-height: calc(100dvh - 9rem); width: auto; height: auto; }
+.foto-grande figcaption { font-size: 0.9rem; color: #a9a8a3; text-align: center; }
+.foto-grande .sheet-nav button { color: var(--carta); border-color: var(--carta); }
+.foto-grande .sheet-nav button:hover { color: var(--nero); }
+
 /* Scheda dell'opera */
 dialog {
   width: 100vw; max-width: 100vw; height: 100dvh; max-height: 100dvh;

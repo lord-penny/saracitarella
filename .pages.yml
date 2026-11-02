@@ -39,6 +39,17 @@ content:
         fields:
           - { name: immagine, label: Foto, type: image }
           - { name: didascalia, label: "Didascalia (facoltativa)", type: string }
+      - name: mostre
+        label: Mostre (la prima in alto è la più recente)
+        type: object
+        list: true
+        fields:
+          - { name: anno, label: Anno, type: number }
+          - { name: titolo, label: Titolo della mostra, type: string, required: true }
+          - { name: tipo, label: "Tipo (es. Personale, Collettiva)", type: string }
+          - { name: luogo, label: "Luogo (galleria, città)", type: string }
+          - { name: date, label: "Date (es. 7–20 ottobre 2022)", type: string }
+          - { name: foto, label: Foto, type: image, list: true }
       - name: ritratto
         label: Ritratto di Sara
         type: image

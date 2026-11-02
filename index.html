@@ -60,6 +60,13 @@
     <div class="bio-text" id="bio-testo"></div>
   </section>
 
+  <section id="mostre" class="mostre" aria-labelledby="mostre-titolo" hidden>
+    <div class="wrap">
+      <h2 id="mostre-titolo">Mostre</h2>
+      <ol class="mostre-lista" id="mostre-lista"></ol>
+    </div>
+  </section>
+
   <section id="contatti" class="contact" aria-labelledby="contatti-titolo">
     <div class="wrap">
       <h2 id="contatti-titolo">Contatti</h2>
@@ -99,6 +106,15 @@
     <button type="button" id="prec" aria-label="Opera precedente">←</button>
     <button type="button" id="succ" aria-label="Opera successiva">→</button>
     <button type="button" id="chiudi">Tutte le opere</button>
+  </div>
+</dialog>
+
+<dialog id="foto-grande" class="foto-grande" aria-label="Foto">
+  <figure><img id="foto-grande-img" alt=""><figcaption id="foto-grande-testo"></figcaption></figure>
+  <div class="sheet-nav">
+    <button type="button" id="fg-prec" aria-label="Foto precedente">←</button>
+    <button type="button" id="fg-succ" aria-label="Foto successiva">→</button>
+    <button type="button" id="fg-chiudi">Chiudi</button>
   </div>
 </dialog>
 

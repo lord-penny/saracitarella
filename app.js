@@ -57,6 +57,34 @@
     $('studio').hidden = false;
   }
 
+  // Mostre: ogni mostra con le sue foto, che si aprono in grande
+  const mostre = (dati.mostre || []).filter(m => m && m.titolo);
+  if (mostre.length) {
+    $('mostre-lista').replaceChildren(...mostre.map(m => {
+      const li = document.createElement('li');
+      li.className = 'mostra';
+      li.innerHTML = '<span class="mostra-anno"></span><div class="mostra-info"><h3></h3><p class="mostra-tipo"></p><p class="mostra-luogo"></p></div><div class="mostra-foto"></div>';
+      li.querySelector('.mostra-anno').textContent = m.anno || '';
+      li.querySelector('h3').textContent = m.titolo;
+      li.querySelector('.mostra-tipo').textContent = m.tipo || '';
+      li.querySelector('.mostra-luogo').textContent = [m.luogo, m.date].filter(Boolean).join(' · ');
+      const foto = (m.foto || []).filter(Boolean);
+      li.querySelector('.mostra-foto').replaceChildren(...foto.map((src, i) => {
+        const b = document.createElement('button');
+        b.type = 'button';
+        b.setAttribute('aria-label', 'Apri la foto ' + (i + 1) + ' di ' + m.titolo);
+        const img = new Image();
+        img.src = src; img.alt = ''; img.loading = 'lazy';
+        img.onerror = () => b.remove();
+        b.append(img);
+        b.addEventListener('click', () => grande(foto, i, m.titolo));
+        return b;
+      }));
+      return li;
+    }));
+    $('mostre').hidden = false;
+  }
+
   const opere = (dati.opere || [])
     .filter(o => o && o.titolo && o.pubblicata !== false)
     .map((o, i) => ({ ...o, id: 'opera-' + slug(o.titolo), ordine: i }))
@@ -245,6 +273,28 @@
   scheda.addEventListener('close', () => {
     if (location.hash.startsWith('#opera-')) history.replaceState(null, '', location.pathname + location.search);
     corrente = null;
+  });
+
+  // Foto a tutto schermo (mostre)
+  const fg = $('foto-grande');
+  let fgFoto = [], fgI = 0, fgTesto = '';
+  function grande(foto, i, testo) {
+    fgFoto = foto; fgTesto = testo;
+    vai(i);
+    if (!fg.open) fg.showModal();
+  }
+  function vai(i) {
+    fgI = (i + fgFoto.length) % fgFoto.length;
+    $('foto-grande-img').src = fgFoto[fgI];
+    $('foto-grande-img').alt = fgTesto;
+    $('foto-grande-testo').textContent = fgTesto + ' · ' + (fgI + 1) + '/' + fgFoto.length;
+  }
+  $('fg-prec').addEventListener('click', () => vai(fgI - 1));
+  $('fg-succ').addEventListener('click', () => vai(fgI + 1));
+  $('fg-chiudi').addEventListener('click', () => fg.close());
+  fg.addEventListener('keydown', e => {
+    if (e.key === 'ArrowLeft') vai(fgI - 1);
+    if (e.key === 'ArrowRight') vai(fgI + 1);
   });
 
   // Tele generate come i suoi quadri: campiture stese a spatola,
