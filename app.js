@@ -39,8 +39,9 @@
   // Nello studio: dettagli e lavori in corso
   const studio = (dati.studio || []).filter(f => f && f.immagine);
   if (studio.length) {
-    $('studio-griglia').replaceChildren(...studio.map(f => {
+    $('studio-griglia').replaceChildren(...studio.map((f, i) => {
       const fig = document.createElement('figure');
+      fig.addEventListener('click', () => grande(studio.map(x => x.immagine), i, 'Nello studio'));
       const img = new Image();
       img.src = f.immagine;
       img.alt = f.didascalia || 'Sara Citarella nello studio';
