@@ -49,6 +49,14 @@ content:
           - { name: tipo, label: "Tipo (es. Personale, Collettiva)", type: string }
           - { name: luogo, label: "Luogo (galleria, città)", type: string }
           - { name: date, label: "Date (es. 7–20 ottobre 2022)", type: string }
+          - { name: descrizione, label: "Descrizione (facoltativa, poche righe)", type: text }
+          - name: stampa
+            label: Articoli di giornale (facoltativi)
+            type: object
+            list: true
+            fields:
+              - { name: titolo, label: "Testata e titolo", type: string }
+              - { name: url, label: "Link all'articolo", type: string }
           - { name: foto, label: Foto, type: image, list: true }
       - name: ritratto
         label: Ritratto di Sara

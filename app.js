@@ -69,6 +69,28 @@
       li.querySelector('h3').textContent = m.titolo;
       li.querySelector('.mostra-tipo').textContent = m.tipo || '';
       li.querySelector('.mostra-luogo').textContent = [m.luogo, m.date].filter(Boolean).join(' · ');
+      const info = li.querySelector('.mostra-info');
+      if (m.descrizione) {
+        const p = document.createElement('p');
+        p.className = 'mostra-desc';
+        p.textContent = m.descrizione;
+        info.append(p);
+      }
+      const stampa = (m.stampa || []).filter(s => s && /^https?:\/\//.test(s.url || ''));
+      if (stampa.length) {
+        const ul = document.createElement('ul');
+        ul.className = 'mostra-stampa';
+        ul.setAttribute('aria-label', 'Ne hanno parlato');
+        ul.append(...stampa.map(s => {
+          const a = document.createElement('a');
+          a.href = s.url; a.target = '_blank'; a.rel = 'noopener';
+          a.textContent = s.titolo || s.url;
+          const item = document.createElement('li');
+          item.append(a);
+          return item;
+        }));
+        info.append(ul);
+      }
       const foto = (m.foto || []).filter(Boolean);
       li.querySelector('.mostra-foto').replaceChildren(...foto.map((src, i) => {
         const b = document.createElement('button');
