@@ -36,6 +36,27 @@
     $('ritratto').prepend(img);
   }
 
+  // Nello studio: dettagli e lavori in corso
+  const studio = (dati.studio || []).filter(f => f && f.immagine);
+  if (studio.length) {
+    $('studio-griglia').replaceChildren(...studio.map(f => {
+      const fig = document.createElement('figure');
+      const img = new Image();
+      img.src = f.immagine;
+      img.alt = f.didascalia || 'Sara Citarella nello studio';
+      img.loading = 'lazy';
+      img.onerror = () => fig.remove();
+      fig.append(img);
+      if (f.didascalia) {
+        const c = document.createElement('figcaption');
+        c.textContent = f.didascalia;
+        fig.append(c);
+      }
+      return fig;
+    }));
+    $('studio').hidden = false;
+  }
+
   const opere = (dati.opere || [])
     .filter(o => o && o.titolo && o.pubblicata !== false)
     .map((o, i) => ({ ...o, id: 'opera-' + slug(o.titolo), ordine: i }))
@@ -138,19 +159,25 @@
   let corrente = null;
   function apri(o) {
     corrente = o;
-    const fig = $('scheda-img');
-    fig.className = 'sheet-img';
-    fig.replaceChildren();
-    if (o.immagine) {
+    const foto = [o.immagine, ...(o.galleria || [])].filter(Boolean);
+    mostra(foto[0], o.titolo);
+    const thumbs = $('scheda-galleria');
+    thumbs.replaceChildren(...(foto.length > 1 ? foto.map((src, i) => {
+      const b = document.createElement('button');
+      b.type = 'button';
+      b.setAttribute('aria-label', 'Foto ' + (i + 1) + ' di ' + foto.length);
+      b.setAttribute('aria-pressed', i === 0);
       const img = new Image();
-      img.alt = o.titolo;
-      img.onerror = () => { img.remove(); fig.classList.add('missing'); fig.textContent = 'Foto in arrivo'; };
-      img.src = o.immagine;
-      fig.append(img);
-    } else {
-      fig.classList.add('missing');
-      fig.textContent = 'Foto in arrivo';
-    }
+      img.src = src; img.alt = ''; img.loading = 'lazy';
+      img.onerror = () => b.remove();
+      b.append(img);
+      b.addEventListener('click', () => {
+        thumbs.querySelectorAll('button').forEach(x => x.setAttribute('aria-pressed', x === b));
+        mostra(src, o.titolo);
+      });
+      return b;
+    }) : []));
+    thumbs.hidden = foto.length < 2;
 
     $('scheda-num').textContent = 'N. ' + o.num + (o.anno ? ' · ' + o.anno : '');
     $('scheda-titolo').textContent = o.titolo;
@@ -183,6 +210,22 @@
     if (!scheda.open) scheda.showModal();
     scheda.scrollTop = 0;
     if (location.hash !== '#' + o.id) history.replaceState(null, '', '#' + o.id);
+  }
+
+  function mostra(src, titolo) {
+    const fig = $('scheda-img');
+    fig.className = 'sheet-img';
+    fig.replaceChildren();
+    if (src) {
+      const img = new Image();
+      img.alt = titolo;
+      img.onerror = () => { img.remove(); fig.classList.add('missing'); fig.textContent = 'Foto in arrivo'; };
+      img.src = src;
+      fig.append(img);
+    } else {
+      fig.classList.add('missing');
+      fig.textContent = 'Foto in arrivo';
+    }
   }
 
   function sposta(d) {

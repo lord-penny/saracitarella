@@ -26,7 +26,7 @@
       "profondita": 2,
       "prezzo": 300,
       "disponibile": true,
-      "immagine": "",
+      "immagine": "immagini/opere/stratificazioni.jpg",
       "descrizione": "Conosci la paura? Può aiutarti a sopravvivere."
     },
     {
@@ -39,7 +39,7 @@
       "profondita": 2,
       "prezzo": 300,
       "disponibile": true,
-      "immagine": "",
+      "immagine": "immagini/opere/lascesa.jpg",
       "descrizione": "Il significato di ascesa è noto a tutti, perché arriva per tutti il momento in cui abbiamo la possibilità di arrivare lì."
     },
     {
@@ -52,7 +52,7 @@
       "profondita": 2,
       "prezzo": 250,
       "disponibile": false,
-      "immagine": "",
+      "immagine": "immagini/opere/too-many-things.jpg",
       "descrizione": "Siamo tante cose, talvolta davvero troppe."
     },
     {
@@ -65,8 +65,12 @@
       "profondita": 2,
       "prezzo": 450,
       "disponibile": true,
-      "immagine": "",
-      "descrizione": "Molti pensano che ripetersi sia un inutile spreco di tempo.\nIo credo che ripetersi sia impossibile, non siamo mai uguali, ci sono mille varianti e di fondo siamo e saremo sempre diversi.\nNel bene e nel male ci riproviamo e talvolta insistendo, raggiungiamo obiettivi incredibili.\nCrederci è per pochi."
+      "immagine": "immagini/opere/again-and-again.jpg",
+      "descrizione": "Molti pensano che ripetersi sia un inutile spreco di tempo.\nIo credo che ripetersi sia impossibile, non siamo mai uguali, ci sono mille varianti e di fondo siamo e saremo sempre diversi.\nNel bene e nel male ci riproviamo e talvolta insistendo, raggiungiamo obiettivi incredibili.\nCrederci è per pochi.",
+      "galleria": [
+        "immagini/opere/again-and-again-foto-2.jpg",
+        "immagini/opere/again-and-again-foto-3.jpg"
+      ]
     },
     {
       "titolo": "unanswered questions or lies",
@@ -78,8 +82,12 @@
       "profondita": 2,
       "prezzo": 400,
       "disponibile": true,
-      "immagine": "",
-      "descrizione": ""
+      "immagine": "immagini/opere/unanswered-questions-or-lies.jpg",
+      "descrizione": "",
+      "galleria": [
+        "immagini/opere/unanswered-questions-or-lies-foto-2.jpg",
+        "immagini/opere/unanswered-questions-or-lies-foto-3.jpg"
+      ]
     },
     {
       "titolo": "comfort zone",
@@ -91,8 +99,12 @@
       "profondita": 3,
       "prezzo": 380,
       "disponibile": true,
-      "immagine": "",
-      "descrizione": ""
+      "immagine": "immagini/opere/comfort-zone.jpg",
+      "descrizione": "",
+      "galleria": [
+        "immagini/opere/comfort-zone-foto-2.jpg",
+        "immagini/opere/comfort-zone-foto-3.jpg"
+      ]
     },
     {
       "titolo": "pink drama",
@@ -104,8 +116,11 @@
       "profondita": 2,
       "prezzo": 330,
       "disponibile": true,
-      "immagine": "",
-      "descrizione": ""
+      "immagine": "immagini/opere/pink-drama.jpg",
+      "descrizione": "",
+      "galleria": [
+        "immagini/opere/pink-drama-foto-2.jpg"
+      ]
     },
     {
       "titolo": "shine",
@@ -117,8 +132,13 @@
       "profondita": 2,
       "prezzo": 340,
       "disponibile": true,
-      "immagine": "",
-      "descrizione": ""
+      "immagine": "immagini/opere/shine.jpg",
+      "descrizione": "",
+      "galleria": [
+        "immagini/opere/shine-foto-2.jpg",
+        "immagini/opere/shine-foto-3.jpg",
+        "immagini/opere/shine-foto-4.jpg"
+      ]
     },
     {
       "titolo": "back home",
@@ -130,8 +150,13 @@
       "profondita": 2,
       "prezzo": 280,
       "disponibile": true,
-      "immagine": "",
-      "descrizione": ""
+      "immagine": "immagini/opere/back-home.jpg",
+      "descrizione": "",
+      "galleria": [
+        "immagini/opere/back-home-foto-2.jpg",
+        "immagini/opere/back-home-foto-3.jpg",
+        "immagini/opere/back-home-foto-4.jpg"
+      ]
     },
     {
       "titolo": "Per tutti splende, come l'oro. Le tenebre invece, sono per pochi.",
@@ -143,8 +168,12 @@
       "profondita": 2,
       "prezzo": 220,
       "disponibile": true,
-      "immagine": "",
-      "descrizione": ""
+      "immagine": "immagini/opere/per-tutti-splende.jpg",
+      "descrizione": "",
+      "galleria": [
+        "immagini/opere/per-tutti-splende-foto-2.jpg",
+        "immagini/opere/per-tutti-splende-foto-3.jpg"
+      ]
     },
     {
       "titolo": "brain matter function and dysfunction",
@@ -156,8 +185,63 @@
       "profondita": 1,
       "prezzo": 480,
       "disponibile": true,
-      "immagine": "",
-      "descrizione": ""
+      "immagine": "immagini/opere/brain-matter-function-and-dysfunction.jpg",
+      "descrizione": "",
+      "galleria": [
+        "immagini/opere/brain-matter-function-and-dysfunction-foto-2.jpg",
+        "immagini/opere/brain-matter-function-and-dysfunction-foto-3.jpg",
+        "immagini/opere/brain-matter-function-and-dysfunction-foto-4.jpg"
+      ]
+    }
+  ],
+  "studio": [
+    {
+      "immagine": "immagini/opere/studio-01.jpg",
+      "didascalia": ""
+    },
+    {
+      "immagine": "immagini/opere/studio-02.jpg",
+      "didascalia": ""
+    },
+    {
+      "immagine": "immagini/opere/studio-03.jpg",
+      "didascalia": ""
+    },
+    {
+      "immagine": "immagini/opere/studio-04.jpg",
+      "didascalia": ""
+    },
+    {
+      "immagine": "immagini/opere/studio-05.jpg",
+      "didascalia": ""
+    },
+    {
+      "immagine": "immagini/opere/studio-06.jpg",
+      "didascalia": ""
+    },
+    {
+      "immagine": "immagini/opere/studio-07.jpg",
+      "didascalia": ""
+    },
+    {
+      "immagine": "immagini/opere/studio-08.jpg",
+      "didascalia": ""
+    },
+    {
+      "immagine": "immagini/opere/studio-09.jpg",
+      "didascalia": ""
+    },
+    {
+      "immagine": "immagini/opere/studio-10.jpg",
+      "didascalia": ""
+    },
+    {
+      "immagine": "immagini/opere/studio-11.jpg",
+      "didascalia": ""
+    },
+    {
+      "immagine": "immagini/opere/studio-12.jpg",
+      "didascalia": ""
     }
   ]
 }

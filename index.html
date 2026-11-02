@@ -46,6 +46,14 @@
     <p class="wrap">La pittura come espressione e viaggio verso la salvezza dell'anima.</p>
   </section>
 
+  <section id="studio" class="studio" aria-labelledby="studio-titolo" hidden>
+    <div class="wrap studio-head">
+      <h2 id="studio-titolo">Nello studio</h2>
+      <p>Materia, gesti, quadri in lavorazione.</p>
+    </div>
+    <div class="studio-grid wrap" id="studio-griglia"></div>
+  </section>
+
   <section id="biografia" class="bio wrap" aria-labelledby="bio-titolo">
     <h2 id="bio-titolo">Biografia</h2>
     <figure class="portrait" id="ritratto"><span class="monogram" aria-hidden="true">SC</span></figure>
@@ -75,8 +83,11 @@
     <a class="barra-logo" href="#inizio" id="scheda-home" aria-label="Sara Citarella, torna all'inizio"><span><b class="dip">S</b>ara</span> <span><b class="dip">C</b>itarella</span></a>
     <button type="button" class="torna" id="torna">← <span class="lungo">Tutte le </span>opere</button>
   </div>
-  <div class="sheet">
-    <figure class="sheet-img" id="scheda-img"></figure>
+  <div class="sheet" tabindex="-1" autofocus>
+    <div class="sheet-media">
+      <figure class="sheet-img" id="scheda-img"></figure>
+      <div class="sheet-thumbs" id="scheda-galleria" role="group" aria-label="Altre foto dell'opera" hidden></div>
+    </div>
     <div class="sheet-info">
       <p class="kicker" id="scheda-num"></p>
       <h3 id="scheda-titolo"></h3>

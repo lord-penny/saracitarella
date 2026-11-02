@@ -18,6 +18,7 @@ content:
         list: true
         fields:
           - { name: immagine, label: "Foto dell'opera", type: image }
+          - { name: galleria, label: "Altre foto (dettagli, ambientate)", type: image, list: true }
           - { name: titolo, label: Titolo, type: string, required: true }
           - { name: anno, label: Anno, type: number, required: true }
           - { name: larghezza, label: "Larghezza (cm)", type: number }
@@ -31,6 +32,13 @@ content:
       - name: biografia
         label: Biografia (ogni a capo è un paragrafo)
         type: text
+      - name: studio
+        label: Nello studio (dettagli e lavori in corso)
+        type: object
+        list: true
+        fields:
+          - { name: immagine, label: Foto, type: image }
+          - { name: didascalia, label: "Didascalia (facoltativa)", type: string }
       - name: ritratto
         label: Ritratto di Sara
         type: image
