@@ -202,7 +202,7 @@ h2 { margin: 0; font: 900 clamp(3.4rem, 11vw, 9rem)/0.82 var(--display); text-tr
 .bio-text p:first-child { font: 500 clamp(1.35rem, 2.4vw, 1.85rem)/1.35 var(--testo); letter-spacing: -0.01em; }
 
 /* Contatti */
-.contact { background: var(--nero); color: var(--carta); padding-block: clamp(4rem, 9vw, 7rem); }
+.contact { background: var(--nero); color: var(--carta); padding-block: clamp(4rem, 9vw, 7rem) clamp(2rem, 4vw, 3rem); }
 .contact-lead { margin: 1.25rem 0 2.5rem; font: 500 clamp(1.15rem, 2vw, 1.5rem)/1.4 var(--testo); color: #c9c8c3; max-width: 40ch; }
 .links { list-style: none; margin: 0; padding: 0; border-top: 2px solid var(--carta); }
 .links li { border-bottom: 1px solid #333; }
