@@ -346,3 +346,10 @@ dialog::backdrop { background: var(--nero); }
 .testo-legale p, .testo-legale li { line-height: 1.65; }
 .testo-legale a { color: inherit; text-underline-offset: 3px; }
 .testo-legale .agg { color: var(--muto); font-size: 0.9rem; }
+
+/* Pagina opera: elenco delle altre opere (link interni) */
+.altre-opere { padding-top: 2.5rem; padding-bottom: 1rem; border-top: 1px solid var(--grigio); margin-top: 2rem; }
+.altre-opere h2 { font: 900 clamp(1.8rem, 5vw, 2.6rem)/1 var(--display); text-transform: uppercase; margin: 0 0 1rem; }
+.altre-opere ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.altre-opere a { display: block; padding: 0.55rem 0.8rem; border: 2px solid currentColor; text-decoration: none; color: inherit; font: 600 0.95rem/1.2 var(--testo); }
+.altre-opere a:hover { background: var(--giallo); color: var(--nero); }

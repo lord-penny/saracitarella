@@ -63,9 +63,12 @@ if CARTELLA.exists():
     shutil.rmtree(CARTELLA)
 CARTELLA.mkdir()
 
+tutte = [(slug(o['titolo']), o['titolo']) for o in opere]
+
 voci = []
 for o in opere:
     nome = slug(o['titolo'])
+    vicine = ''.join(f'<li><a href="/opere/{n}/">{e(t)}</a></li>' for n, t in tutte if n != nome)
     url = f'{SITO}/opere/{nome}/'
     foto = [f for f in [o.get('immagine'), *(o.get('galleria') or [])] if f]
     tecnica = ', '.join(x for x in [o.get('tecnica'), (o.get('supporto') or '').lower() and 'su ' + o['supporto'].lower()] if x)
@@ -152,6 +155,10 @@ for o in opere:
     {cta}
   </div>
 </main>
+<nav class="altre-opere wrap" aria-label="Altre opere">
+  <h2>Altre opere</h2>
+  <ul>{vicine}</ul>
+</nav>
 <footer class="foot wrap">
   <span>© Sara Citarella · <a href="/">saracitarella.it</a> · <a href="/privacy/">Privacy</a></span>
   <span class="firma">Made in Napoli with <span class="cuore" aria-label="love">♥</span> da <a href="https://morric.it" target="_blank" rel="noopener">Morric</a></span>
@@ -162,6 +169,14 @@ for o in opere:
     (CARTELLA / nome).mkdir(exist_ok=True)
     (CARTELLA / nome / 'index.html').write_text(pagina, encoding='utf-8')
     voci.append((url, foto, o['titolo']))
+
+# Link alle pagine delle opere dentro la home (nella griglia, finché lo
+# script non la disegna): così Google le trova anche senza la sitemap
+casa = RADICE / 'index.html'
+pagina_home = casa.read_text(encoding='utf-8')
+link = ''.join(f'\n      <a class="msg wrap" href="opere/{n}/">{e(t)}</a>' for n, t in tutte)
+pagina_home = re.sub(r'<!--opere-->.*?<!--/opere-->', lambda m: f'<!--opere-->{link}\n      <!--/opere-->', pagina_home, flags=re.S)
+casa.write_text(pagina_home, encoding='utf-8')
 
 # Sitemap con home, pagine delle opere e foto
 def immagini(foto, titolo):
