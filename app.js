@@ -39,13 +39,18 @@
   const studio = (dati.studio || []).filter(f => f && f.immagine);
   if (studio.length) {
     $('studio-griglia').replaceChildren(...studio.map((f, i) => {
+      // un pulsante, così la foto si apre anche da tastiera
       const fig = document.createElement('figure');
-      fig.addEventListener('click', () => grande(studio.map(x => x.immagine), i, 'Nello studio'));
+      const b = document.createElement('button');
+      b.type = 'button';
+      b.setAttribute('aria-label', 'Apri la foto ' + (i + 1) + ' di ' + studio.length + (f.didascalia ? ': ' + f.didascalia : ', Nello studio'));
+      b.addEventListener('click', () => grande(studio.map(x => x.immagine), i, 'Nello studio'));
       const img = new Image();
-      img.alt = f.didascalia || 'Sara Citarella nello studio';
+      img.alt = '';
       img.loading = 'lazy';
       carica(img, f.immagine, 480, () => fig.remove());
-      fig.append(img);
+      b.append(img);
+      fig.append(b);
       if (f.didascalia) {
         const c = document.createElement('figcaption');
         c.textContent = f.didascalia;
@@ -83,6 +88,7 @@
           const a = document.createElement('a');
           a.href = s.url; a.target = '_blank'; a.rel = 'noopener';
           a.textContent = s.titolo || s.url;
+          a.append(nuovaScheda());
           const item = document.createElement('li');
           item.append(a);
           return item;
@@ -126,6 +132,8 @@
       filtro = val;
       filtri.querySelectorAll('button').forEach(x => x.setAttribute('aria-pressed', x === b));
       disegna();
+      // chi usa un lettore di schermo sente quante opere mostra il filtro
+      $('stato').textContent = visibili.length === 1 ? '1 opera' : visibili.length + ' opere';
     });
     filtri.append(b);
   }
@@ -140,13 +148,21 @@
     if (!visibili.length) griglia.innerHTML = '<p class="msg wrap">Nessuna opera in questa selezione.</p>';
   }
 
+  function nuovaScheda() {
+    const s = document.createElement('span');
+    s.className = 'sr';
+    s.textContent = ' (si apre in una nuova scheda)';
+    return s;
+  }
+
   function cella(o) {
     const w = Number(o.larghezza) || 50, h = Number(o.altezza) || 50;
     const btn = document.createElement('button');
     btn.type = 'button';
     btn.className = 'tile';
     btn.id = o.id;
-    btn.setAttribute('aria-label', o.titolo + ', apri la scheda');
+    // il nome letto dai lettori di schermo dice anche anno, misure e se è venduta
+    btn.setAttribute('aria-label', [o.titolo, o.anno, misure(o, false), o.disponibile === false ? 'venduta' : ''].filter(Boolean).join(', ') + '. Apri la scheda');
 
     const fig = document.createElement('span');
     fig.className = 'tile-img';
@@ -253,6 +269,7 @@
     } else {
       cta.href = 'https://www.instagram.com/saracitarella.art';
       cta.target = '_blank';
+      if (!cta.querySelector('.sr')) cta.append(nuovaScheda());
     }
 
     if (!scheda.open) scheda.showModal();
