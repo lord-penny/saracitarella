@@ -64,6 +64,8 @@
 </head>
 <body>
 
+<a class="salta" href="#opere">Salta al contenuto</a>
+
 <nav class="barra" id="barra" aria-label="Menu">
   <a class="barra-logo" href="#inizio" aria-label="Sara Citarella, torna all'inizio"><span><b class="dip">S</b>ara</span> <span><b class="dip">C</b>itarella</span></a>
   <span class="barra-link"><a href="#opere">Opere</a><a href="#biografia">Bio</a><a href="#mostre">Mostre</a><a href="#contatti">Contatti</a></span>
@@ -80,7 +82,7 @@
     <a class="b b-blu" href="#mostre"><span class="b-k">03</span><span class="b-t">Mostre</span></a>
     <a class="b b-contatti" href="#contatti"><span class="b-k">04</span><span class="b-t">Contatti</span></a>
     <div class="b b-carta"><p>Pittura astratta e materica. Acrilico, pomice, gesso, chiodi e rame su tela e legno.</p></div>
-    <a class="b b-nero" href="https://www.instagram.com/saracitarella.art" target="_blank" rel="noopener"><span class="b-t b-small">Instagram</span><span class="b-a" aria-hidden="true">↗</span></a>
+    <a class="b b-nero" href="https://www.instagram.com/saracitarella.art" target="_blank" rel="noopener"><span class="b-t b-small">Instagram</span><span class="sr"> (si apre in una nuova scheda)</span><span class="b-a" aria-hidden="true">↗</span></a>
   </nav>
 </header>
 
@@ -144,7 +146,7 @@
       <p class="contact-lead">Per opere, acquisti e commissioni scrivi a Sara.</p>
       <ul class="links">
         <li id="contatto-email" hidden><a href="#"><span class="k">Email</span><span class="v"></span></a></li>
-        <li><a href="https://www.instagram.com/saracitarella.art" target="_blank" rel="noopener"><span class="k">Instagram</span><span class="v">@saracitarella.art</span></a></li>
+        <li><a href="https://www.instagram.com/saracitarella.art" target="_blank" rel="noopener"><span class="k">Instagram</span><span class="v">@saracitarella.art</span><span class="sr"> (si apre in una nuova scheda)</span></a></li>
       </ul>
     </div>
   </section>
@@ -152,8 +154,8 @@
 
 <footer class="foot wrap">
   <span>© <span id="anno"></span> Sara Citarella</span>
-  <span>Tutte le immagini sono protette da diritto d'autore. <a class="foot-link" href="privacy/">Privacy</a></span>
-  <span class="firma">Made in Napoli with <span class="cuore" aria-label="love">♥</span> da <a href="https://morric.it" target="_blank" rel="noopener">Morric</a></span>
+  <span>Tutte le immagini sono protette da diritto d'autore. <a class="foot-link" href="privacy/">Privacy</a> <a class="foot-link" href="accessibilita/">Accessibilità</a></span>
+  <span class="firma">Made in Napoli with <span class="cuore" role="img" aria-label="love">♥</span> da <a href="https://morric.it" target="_blank" rel="noopener">Morric<span class="sr"> (si apre in una nuova scheda)</span></a></span>
 </footer>
 
 <dialog id="scheda" aria-labelledby="scheda-titolo">
@@ -189,6 +191,8 @@
     <button type="button" id="fg-chiudi">Chiudi</button>
   </div>
 </dialog>
+
+<p class="sr" id="stato" role="status"></p>
 
 <script src="app.js?v=20261103b"></script>
 </body>

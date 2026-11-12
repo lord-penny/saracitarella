@@ -51,6 +51,13 @@ def web(src, lato):
     return str(v) if src.startswith('immagini/opere/') and (RADICE / v).exists() else src
 
 
+def ld_sicuro(dati):
+    # JSON-LD dentro <script>: < > & diventano sequenze \u, così un titolo
+    # scritto dal pannello non può mai chiudere il tag e iniettare codice
+    return (json.dumps(dati, ensure_ascii=False)
+            .replace('<', '\\u003c').replace('>', '\\u003e').replace('&', '\\u0026'))
+
+
 def assoluto(src):
     return f"{SITO}/{src.lstrip('/')}" if src else ''
 
@@ -88,7 +95,7 @@ for o in opere:
         oggetto = quote('Informazioni su «' + o['titolo'] + '»')
         cta = f'<a class="cta" href="mailto:{e(email)}?subject={oggetto}">Chiedi informazioni</a>'
     else:
-        cta = '<a class="cta" href="https://www.instagram.com/saracitarella.art" target="_blank" rel="noopener">Chiedi informazioni</a>'
+        cta = '<a class="cta" href="https://www.instagram.com/saracitarella.art" target="_blank" rel="noopener">Chiedi informazioni<span class="sr"> (si apre in una nuova scheda)</span></a>'
     altre = ''.join(f'<img src="/{e(web(f, 480))}" alt="{e(o["titolo"])}, Sara Citarella: foto {i + 2}" loading="lazy">' for i, f in enumerate(foto[1:]))
     img = (f'<img src="/{e(web(foto[0], 1800))}" alt="{e(o["titolo"])}, {e(tecnica)}, Sara Citarella">' if foto else '')
 
@@ -135,14 +142,15 @@ for o in opere:
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <link rel="stylesheet" href="/font/font.css?v={OGGI}">
 <link rel="stylesheet" href="/style.css?v={OGGI}">
-<script type="application/ld+json">{json.dumps(opera_ld, ensure_ascii=False)}</script>
+<script type="application/ld+json">{ld_sicuro(opera_ld)}</script>
 </head>
 <body class="pagina-opera">
+<a class="salta" href="#contenuto">Salta al contenuto</a>
 <nav class="barra visibile sheet-barra" aria-label="Menu">
   <a class="barra-logo" href="/" aria-label="Sara Citarella, vai alla home"><span><b class="dip">S</b>ara</span> <span><b class="dip">C</b>itarella</span></a>
   <a class="torna" href="/#opere">← <span class="lungo">Tutte le </span>opere</a>
 </nav>
-<main class="sheet">
+<main class="sheet" id="contenuto">
   <div class="sheet-media">
     <figure class="sheet-img">{img}</figure>
     {f'<div class="pagina-altre">{altre}</div>' if altre else ''}
@@ -160,8 +168,8 @@ for o in opere:
   <ul>{vicine}</ul>
 </nav>
 <footer class="foot wrap">
-  <span>© Sara Citarella · <a href="/">saracitarella.it</a> · <a href="/privacy/">Privacy</a></span>
-  <span class="firma">Made in Napoli with <span class="cuore" aria-label="love">♥</span> da <a href="https://morric.it" target="_blank" rel="noopener">Morric</a></span>
+  <span>© Sara Citarella · <a href="/">saracitarella.it</a> · <a href="/privacy/">Privacy</a> · <a href="/accessibilita/">Accessibilità</a></span>
+  <span class="firma">Made in Napoli with <span class="cuore" role="img" aria-label="love">♥</span> da <a href="https://morric.it" target="_blank" rel="noopener">Morric<span class="sr"> (si apre in una nuova scheda)</span></a></span>
 </footer>
 </body>
 </html>
