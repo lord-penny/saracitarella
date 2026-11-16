@@ -119,7 +119,8 @@
       "immagine": "immagini/opere/pink-drama.jpg",
       "descrizione": "Anime rosa dai pensieri neri che delineano, segnano, danneggiano ed infliggono il dramma. «Il rosa»: quanti pregiudizi abbiamo sul rosa? Ciò che è candido è a maggior ragione ricettivo, fragile ma di natura forte.",
       "galleria": [
-        "immagini/opere/pink-drama-foto-2.jpg"
+        "immagini/opere/pink-drama-foto-2.jpg",
+        "immagini/opere/pink-drama-mostra-2022.jpg"
       ]
     },
     {
@@ -190,7 +191,8 @@
       "galleria": [
         "immagini/opere/brain-matter-function-and-dysfunction-foto-2.jpg",
         "immagini/opere/brain-matter-function-and-dysfunction-foto-3.jpg",
-        "immagini/opere/brain-matter-function-and-dysfunction-foto-4.jpg"
+        "immagini/opere/brain-matter-function-and-dysfunction-foto-4.jpg",
+        "immagini/opere/brain-matter-function-and-dysfunction-mostra-2022.jpg"
       ]
     },
     {
@@ -269,7 +271,10 @@
       "titolo": "red",
       "disponibile": false,
       "immagine": "immagini/opere/red.jpg",
-      "pubblicata": false
+      "pubblicata": false,
+      "galleria": [
+        "immagini/opere/red-mostra-2022.jpg"
+      ]
     },
     {
       "titolo": "white rage",
@@ -386,7 +391,11 @@
         "immagini/opere/mostra-bagnoli-2022-02-1.jpg",
         "immagini/opere/mostra-bagnoli-2022-02-2.jpg",
         "immagini/opere/mostra-bagnoli-2022-02-3.jpg",
-        "immagini/opere/mostra-bagnoli-2022-02-4.jpg"
+        "immagini/opere/mostra-bagnoli-2022-02-4.jpg",
+        "immagini/opere/mostra-bagnoli-2022-02-5.jpg",
+        "immagini/opere/mostra-bagnoli-2022-02-6.jpg",
+        "immagini/opere/mostra-bagnoli-2022-02-7.jpg",
+        "immagini/opere/mostra-bagnoli-2022-02-8.jpg"
       ]
     }
   ]
