@@ -10,6 +10,8 @@
   --blu: #1f3bff;
   --grigio: #e7e6e1;
   --muto: #6b6a66;
+  /* rosso più scuro per i testi piccoli su fondo chiaro (contrasto 5:1) */
+  --rosso-testo: #d1001f;
 
   --display: "Big Shoulders Display", "Arial Narrow", Impact, sans-serif;
   --testo: "Schibsted Grotesk", "Helvetica Neue", Arial, system-ui, sans-serif;
@@ -30,7 +32,24 @@ body {
 img { max-width: 100%; display: block; }
 a { color: inherit; }
 ::selection { background: var(--giallo); color: var(--nero); }
-:focus-visible { outline: 3px solid var(--blu); outline-offset: 2px; }
+:focus-visible { outline: 3px solid var(--fuoco, var(--nero)); outline-offset: 2px; }
+/* Sui fondi scuri il contorno di chi naviga da tastiera è giallo */
+.barra, .name-panel, .contact, .studio, .foot, .foto-grande, .b-blu, .b-nero { --fuoco: var(--giallo); }
+.b:focus-visible, .tile:focus-visible { outline-offset: -8px; }
+.b-blu:focus-visible { --fuoco: var(--carta); }
+
+/* Testo letto solo dai lettori di schermo */
+.sr {
+  position: absolute !important; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap; border: 0;
+}
+/* "Salta al contenuto": compare solo con il tasto Tab */
+.salta {
+  position: absolute; z-index: 20; left: 16px; top: -100px;
+  padding: 0.8rem 1.1rem; background: var(--giallo); color: var(--nero);
+  font: 600 0.9rem/1 var(--testo); text-decoration: none;
+}
+.salta:focus { top: max(12px, env(safe-area-inset-top, 0px)); }
 
 .wrap {
   padding-left: max(16px, env(safe-area-inset-left, 0px));
@@ -128,7 +147,7 @@ body::before {
   .barra-link a { font-size: clamp(0.58rem, 2.7vw, 0.78rem); letter-spacing: 0.04em; }
 }
 .barra-link { display: flex; align-items: center; gap: clamp(0.9rem, 3vw, 2rem); }
-.barra-link a { font: 600 0.78rem/1 var(--testo); letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; }
+.barra-link a { font: 600 0.78rem/1 var(--testo); letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; padding-block: 0.6rem; margin-block: -0.6rem; }
 .barra a:hover { color: var(--giallo); }
 .barra-logo:hover span { color: inherit; }
 section[id] { scroll-margin-top: 4rem; }
@@ -171,7 +190,7 @@ h2 { margin: 0; font: 900 clamp(3.4rem, 11vw, 9rem)/0.82 var(--display); text-tr
 .tile-n { grid-row: span 2; font: 900 2.2rem/0.9 var(--display); }
 .tile-t { font: 700 1.02rem/1.25 var(--testo); text-transform: none; overflow-wrap: anywhere; }
 .tile-m { font: 400 0.86rem/1.4 var(--testo); color: var(--muto); }
-.tile-m .sold { color: var(--rosso); font-weight: 600; }
+.tile-m .sold { color: var(--rosso-testo); font-weight: 600; }
 .tile:hover .tile-m { color: var(--nero); }
 
 @media (max-width: 600px) {
@@ -228,7 +247,8 @@ h2 { margin: 0; font: 900 clamp(3.4rem, 11vw, 9rem)/0.82 var(--display); text-tr
 .studio-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.75rem; }
 @media (min-width: 700px) { .studio-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
 @media (min-width: 1000px) { .studio-grid { grid-template-columns: repeat(6, minmax(0, 1fr)); } }
-.studio-grid figure { margin: 0; cursor: zoom-in; }
+.studio-grid figure { margin: 0; }
+.studio-grid button { display: block; width: 100%; padding: 0; border: 0; background: none; cursor: zoom-in; }
 .studio-grid img { display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; }
 .studio-grid figcaption { margin-top: 0.4rem; font-size: 0.85rem; color: #a9a8a3; }
 
@@ -281,7 +301,7 @@ dialog::backdrop { background: var(--nero); }
 .sheet-thumbs button[aria-pressed="true"] { border-color: var(--nero); }
 .sheet-thumbs img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .sheet-info { display: grid; align-content: center; gap: 1.1rem; min-width: 0; }
-.sheet-info .kicker { color: var(--rosso); }
+.sheet-info .kicker { color: var(--rosso-testo); }
 .sheet-info h3 { margin: 0; font: 900 clamp(2.4rem, 5vw, 4.6rem)/0.88 var(--display); text-transform: uppercase; text-wrap: balance; overflow-wrap: anywhere; }
 .sheet-info dl { margin: 0.5rem 0 0; display: grid; grid-template-columns: auto minmax(0, 1fr); border-top: 2px solid var(--nero); }
 .sheet-info dt, .sheet-info dd { margin: 0; padding-block: 0.65rem; border-bottom: 1px solid #d6d5d0; }
@@ -321,7 +341,8 @@ dialog::backdrop { background: var(--nero); }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .b, .b-a, .tile { transition: none; }
+  .b, .b-a, .tile, .barra, .mostra-foto img { transition: none; }
+  a.b:hover .b-a, .mostra-foto button:hover img { transform: none; }
 }
 /* Telefoni stretti: nella barra solo le iniziali dipinte, così entrano tutte le voci */
 @media (max-width: 409px) {
