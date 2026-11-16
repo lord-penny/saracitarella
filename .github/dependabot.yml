@@ -1,0 +1,8 @@
+# Controlla una volta al mese se le azioni usate dalle GitHub Action
+# hanno aggiornamenti di sicurezza e, se sì, propone la modifica.
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: monthly
